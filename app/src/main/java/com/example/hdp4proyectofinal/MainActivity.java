@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
                 rbBrujula.setChecked(false);
                 rbHuella.setChecked(false);
                 rbRostro.setChecked(false);
+                isSelectedBrujula[0] = false;
+                isSelectedHuella[0] = false;
+                isSelectedRostro[0] = false;
             }
         });
 
@@ -42,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
                 rbGravedad.setChecked(false);
                 rbHuella.setChecked(false);
                 rbRostro.setChecked(false);
+                isSelectedGravedad[0] = false;
+                isSelectedHuella[0] = false;
+                isSelectedRostro[0] = false;
             }
         });
 
@@ -52,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
                 rbGravedad.setChecked(false);
                 rbBrujula.setChecked(false);
                 rbRostro.setChecked(false);
+                isSelectedGravedad[0] = false;
+                isSelectedBrujula[0] = false;
+                isSelectedRostro[0] = false;
             }
         });
 
@@ -62,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
                 rbGravedad.setChecked(false);
                 rbBrujula.setChecked(false);
                 rbHuella.setChecked(false);
+                isSelectedGravedad[0] = false;
+                isSelectedBrujula[0] = false;
+                isSelectedHuella[0] = false;
             }
         });
 
@@ -69,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
             if (isSelectedGravedad[0]) {
                 Intent intentGravedad = new Intent(getApplicationContext(), Gravedad.class);
                 startActivity(intentGravedad);
+            }
+            if (isSelectedHuella[0]) {
+                Intent intentHuella = new Intent(getApplicationContext(), HuellaDactilar.class);
+                startActivity(intentHuella);
             }
         });
     }

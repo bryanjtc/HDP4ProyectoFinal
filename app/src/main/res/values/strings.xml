@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">HDP4 ProyectoFinal</string>
+    <string name="gravedad">Gravedad</string>
+    <string name="reconocimiento_facial">Reconocimiento facial</string>
+    <string name="brujula">Brujula</string>
+    <string name="continuar">Continuar</string>
+    <string name="sensores">Sensores</string>
+    <string name="huella_dactilar">Huella Dactilar</string>
 </resources>

@@ -6,13 +6,65 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="221dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="130dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnContinuar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloPrincipal">
+
+        <RadioButton
+            android:id="@+id/opcionGravedad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gravedad" />
+
+        <RadioButton
+            android:id="@+id/opcionHuella"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/huella_dactilar" />
+
+        <RadioButton
+            android:id="@+id/opcionBrujula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/brujula" />
+
+        <RadioButton
+            android:id="@+id/opcionRostro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/reconocimiento_facial"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RadioGroup>
+
     <TextView
+        android:id="@+id/tituloPrincipal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="51dp"
+        android:layout_marginBottom="160dp"
+        android:text="@string/sensores"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnContinuar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="121dp"
+        android:text="@string/continuar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

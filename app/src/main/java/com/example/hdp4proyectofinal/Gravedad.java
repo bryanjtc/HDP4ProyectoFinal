@@ -3,6 +3,7 @@ package com.example.hdp4proyectofinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -11,13 +12,13 @@ import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Gravedad extends AppCompatActivity implements SensorEventListener {
     private TextView valor_x, valor_y, valor_z;
     private SensorManager sensorManager;
     private Sensor gravity;
-    private boolean presencia_grav;
     private AudioManager amanager;
 
     @Override
@@ -31,25 +32,31 @@ public class Gravedad extends AppCompatActivity implements SensorEventListener {
         valor_x=findViewById(R.id.textView_x);
         valor_y=findViewById(R.id.textView_y);
         valor_z=findViewById(R.id.textView_z);
-
+        Button btnRegresar = findViewById(R.id.btnRegresar);
         sensorManager=(SensorManager) getSystemService(SENSOR_SERVICE);
 
         if(sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY)!=null)
         {
             gravity=sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY);
-            presencia_grav=true;
         }else{
-            valor_x.setText("El sensor no esta presente");
-            presencia_grav=false;
+            String mensaje="El sensor no esta presente";
+            valor_x.setText(mensaje);
         }
 
+        btnRegresar.setOnClickListener(v -> {
+            Intent intentMain = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intentMain);
+        });
     }
 
     @Override //este es el lmetodo que dira el valor de cada uno
     public void onSensorChanged(SensorEvent sensorEvent) {
-        valor_x.setText(sensorEvent.values[0]+" m/s2");
-        valor_y.setText(sensorEvent.values[1]+" m/s2");
-        valor_z.setText(sensorEvent.values[2]+" m/s2");
+        String ValorX = sensorEvent.values[0]+" m/s2";
+        String ValorY = sensorEvent.values[1]+" m/s2";
+        String ValorZ = sensorEvent.values[2]+" m/s2";
+        valor_x.setText(ValorX);
+        valor_y.setText(ValorY);
+        valor_z.setText(ValorZ);
 
         if(sensorEvent.values[2]<9.7) //significa que esta boca abajo
         {

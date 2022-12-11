@@ -2,12 +2,14 @@ package com.example.hdp4proyectofinal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.widget.Button;
 
 public class Proximidad extends AppCompatActivity {
 
@@ -22,7 +24,7 @@ public class Proximidad extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proximidad);
-
+        Button btnRegresar = findViewById(R.id.btnRegresar3);
         // creamos una instancia del sensormanager
         sensorManager =(SensorManager)getSystemService(SENSOR_SERVICE);
 
@@ -58,6 +60,11 @@ public class Proximidad extends AppCompatActivity {
             }
         };
         start();
+
+        btnRegresar.setOnClickListener(v -> {
+            Intent intentMain = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intentMain);
+        });
     }
 
     // metodo para invocar el sensorManager

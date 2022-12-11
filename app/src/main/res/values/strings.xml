@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">HDP4 ProyectoFinal</string>
+    <string name="gravedad">Gravedad</string>
+    <string name="proximidad">Proximidad</string>
+    <string name="brujula">Brujula</string>
+    <string name="continuar">Continuar</string>
+    <string name="sensores">Sensores</string>
+    <string name="huella_dactilar">Huella Dactilar</string>
+    <string name="valor_en_x">Valor en X</string>
+    <string name="valor_en_y">Valor en Y</string>
+    <string name="valor_en_z">Valor en Z</string>
+    <string name="sensor_de_gravedad">Sensor de Gravedad</string>
+    <string name="regresar">Regresar</string>
+    <string name="login">Login</string>
+    <string name="sensor_de_proximidad">Sensor de Proximidad</string>
 </resources>

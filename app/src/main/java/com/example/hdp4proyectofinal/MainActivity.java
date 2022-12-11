@@ -16,12 +16,12 @@ public class MainActivity extends AppCompatActivity {
         RadioButton rbGravedad = findViewById(R.id.opcionGravedad);
         RadioButton rbBrujula = findViewById(R.id.opcionBrujula);
         RadioButton rbHuella = findViewById(R.id.opcionHuella);
-        RadioButton rbRostro = findViewById(R.id.opcionRostro);
+        RadioButton rbProximidad = findViewById(R.id.opcionProximidad);
         Button btnContinuar = findViewById(R.id.btnContinuar);
         final Boolean[] isSelectedGravedad = new Boolean[1];
         final Boolean[] isSelectedBrujula = new Boolean[1];
         final Boolean[] isSelectedHuella = new Boolean[1];
-        final Boolean[] isSelectedRostro = new Boolean[1];
+        final Boolean[] isSelectedProximidad = new Boolean[1];
 
         btnContinuar.setEnabled(false);
 
@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
                 btnContinuar.setEnabled(true);
                 rbBrujula.setChecked(false);
                 rbHuella.setChecked(false);
-                rbRostro.setChecked(false);
+                rbProximidad.setChecked(false);
                 isSelectedBrujula[0] = false;
                 isSelectedHuella[0] = false;
-                isSelectedRostro[0] = false;
+                isSelectedProximidad[0] = false;
             }
         });
 
@@ -44,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
                 btnContinuar.setEnabled(true);
                 rbGravedad.setChecked(false);
                 rbHuella.setChecked(false);
-                rbRostro.setChecked(false);
+                rbProximidad.setChecked(false);
                 isSelectedGravedad[0] = false;
                 isSelectedHuella[0] = false;
-                isSelectedRostro[0] = false;
+                isSelectedProximidad[0] = false;
             }
         });
 
@@ -57,16 +57,16 @@ public class MainActivity extends AppCompatActivity {
                 btnContinuar.setEnabled(true);
                 rbGravedad.setChecked(false);
                 rbBrujula.setChecked(false);
-                rbRostro.setChecked(false);
+                rbProximidad.setChecked(false);
                 isSelectedGravedad[0] = false;
                 isSelectedBrujula[0] = false;
-                isSelectedRostro[0] = false;
+                isSelectedProximidad[0] = false;
             }
         });
 
-        rbRostro.setOnClickListener(v -> {
-            isSelectedRostro[0] = rbRostro.isChecked();
-            if (isSelectedRostro[0]) {
+        rbProximidad.setOnClickListener(v -> {
+            isSelectedProximidad[0] = rbProximidad.isChecked();
+            if (isSelectedProximidad[0]) {
                 btnContinuar.setEnabled(true);
                 rbGravedad.setChecked(false);
                 rbBrujula.setChecked(false);
@@ -85,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
             if (isSelectedHuella[0]) {
                 Intent intentHuella = new Intent(getApplicationContext(), HuellaDactilar.class);
                 startActivity(intentHuella);
+            }
+            if (isSelectedProximidad[0]) {
+                Intent intentProximidad = new Intent(getApplicationContext(), Proximidad.class);
+                startActivity(intentProximidad);
             }
         });
     }

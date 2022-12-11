@@ -35,11 +35,11 @@
             android:text="@string/brujula" />
 
         <RadioButton
-            android:id="@+id/opcionRostro"
+            android:id="@+id/opcionProximidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="@string/reconocimiento_facial"
+            android:text="@string/proximidad"
             tools:ignore="TouchTargetSizeCheck" />
     </RadioGroup>
 

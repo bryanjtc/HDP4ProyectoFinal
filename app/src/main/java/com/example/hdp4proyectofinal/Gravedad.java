@@ -34,8 +34,7 @@ public class Gravedad extends AppCompatActivity implements SensorEventListener {
         valor_z=findViewById(R.id.textView_z);
         Button btnRegresar = findViewById(R.id.btnRegresar);
         sensorManager=(SensorManager) getSystemService(SENSOR_SERVICE);
-
-
+        ah bueno
 
         if(sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY)!=null)
         {

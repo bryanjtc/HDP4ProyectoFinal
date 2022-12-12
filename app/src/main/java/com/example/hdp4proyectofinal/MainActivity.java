@@ -90,6 +90,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentProximidad = new Intent(getApplicationContext(), Proximidad.class);
                 startActivity(intentProximidad);
             }
+
+            if (isSelectedBrujula[0]) {
+                Intent intentBrujula = new Intent(getApplicationContext(), Brujula.class);
+                startActivity(intentBrujula);
+            }
         });
     }
 }
